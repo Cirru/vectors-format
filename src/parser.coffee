@@ -166,6 +166,10 @@ parseProgram = (text) ->
       if tryVector.ok
         tryEnd = parseFileEnd tryVector.rest
         if tryEnd.ok
-        then tryVector
+          ok: yes, data: tryVector.data, rest: ''
         else ok: no, data: 'file end not found', rest: tryVector.rest
       else ok: no, data: 'vector not found', rest: text
+
+exports.parseString = parseString
+exports.parseVector = parseVector
+exports.parseProgram = parseProgram

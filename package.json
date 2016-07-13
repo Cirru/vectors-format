@@ -1,14 +1,31 @@
 {
-  "name": "vectors-format",
+  "name": "cirru-vectors-format",
   "version": "0.1.0",
   "description": "Cirru Vectors Format",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "gulp coffee"
   },
   "keywords": [
     "Cirru"
   ],
   "author": "jiyinyiyong",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cirru/vectors-format.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cirru/vectors-format/issues"
+  },
+  "homepage": "https://github.com/Cirru/vectors-format#readme"
 }
