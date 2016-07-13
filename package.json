@@ -1,6 +1,6 @@
 {
   "name": "cirru-vectors-format",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Cirru Vectors Format",
   "main": "lib/index.js",
   "scripts": {
