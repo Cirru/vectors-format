@@ -35,6 +35,18 @@ result = write data
 expected = '\n[\n["a" "b" "c d"]\n["e" ["f" ["g"] "h"]]\n["i"]\n]\n'
 ```
 
+### Test
+
+```bash
+cd test/
+coffee write.coffee
+coffee parse.coffee
+```
+
+```bash
+cd real-demo-test
+coffee two-way-check.coffee
+```
 ### License
 
 MIT
