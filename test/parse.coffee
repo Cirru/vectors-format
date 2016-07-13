@@ -30,7 +30,14 @@ testParseFileEmpty = ->
   console.log 'expected:', expected
 
 testParseFileNested = ->
-  file = '\n[["a" ["b"]] ["c"] ["d"]]\n'
+  file = '\n[\n["a" ["b"]] ["c"] ["d"]\n]\n'
+  result = parser.parseProgram file
+  expected = ok: yes, data: [['a', ['b']], ['c'], ['d']], rest: ''
+  console.log 'result:  ', JSON.stringify(result)
+  console.log 'expected:', JSON.stringify(expected)
+
+testParseFileSpaced = ->
+  file = '\n[\n[ "a" [ "b" ] ] [ "c" ] [ "d" ]\n]\n'
   result = parser.parseProgram file
   expected = ok: yes, data: [['a', ['b']], ['c'], ['d']], rest: ''
   console.log 'result:  ', JSON.stringify(result)
@@ -41,3 +48,4 @@ do testParseVectorSimple
 do testParseVectorNested
 do testParseFileEmpty
 do testParseFileNested
+do testParseFileSpaced

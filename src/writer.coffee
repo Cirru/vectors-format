@@ -4,7 +4,7 @@ writeVector = (x) ->
     JSON.stringify x
   else
     items = x.map writeVector
-    "[#{items.join(' ')}]"
+    "[ #{items.join(' ')} ]"
 
 exports.write = (vector) ->
   lines = vector.map writeVector
