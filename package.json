@@ -1,0 +1,14 @@
+{
+  "name": "vectors-format",
+  "version": "0.1.0",
+  "description": "Cirru Vectors Format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Cirru"
+  ],
+  "author": "jiyinyiyong",
+  "license": "MIT"
+}
