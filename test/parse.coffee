@@ -43,9 +43,17 @@ testParseFileSpaced = ->
   console.log 'result:  ', JSON.stringify(result)
   console.log 'expected:', JSON.stringify(expected)
 
+testBackslashInString = ->
+  data = '"\\\\"'
+  result = parser.parseString data
+  expected = ok: yes, data: '\\', rest: ''
+  console.log 'result:  ', JSON.stringify(result)
+  console.log 'expected:', JSON.stringify(expected)
+
 do testParseStringSimple
 do testParseVectorSimple
 do testParseVectorNested
 do testParseFileEmpty
 do testParseFileNested
 do testParseFileSpaced
+do testBackslashInString

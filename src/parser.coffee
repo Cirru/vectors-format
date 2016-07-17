@@ -14,7 +14,7 @@ parseBackslash = (text) ->
   anyChar = parseAnyChar text
   if anyChar.ok
     if anyChar.data is '\\' then anyChar
-    else ok: no, data: 'chat not \\', rest: text
+    else ok: no, data: 'char not \\', rest: text
   else anyChar
 
 parseDoubleQuote = (text) ->
@@ -79,7 +79,7 @@ parseEscape = (text) ->
       else if anyChar.data is '"'
         ok: yes, data: '"', rest: anyChar.rest
       else ok: yes, data: anyChar.data, rest: anyChar.rest
-    else ok:no, data: anyChar.data, rest: text
+    else ok: no, data: anyChar.data, rest: text
   else ok: no, data: backslash.data, rest: text
 
 parseStringInside = (text) ->
@@ -92,7 +92,7 @@ parseStringInside = (text) ->
   else
     tryEscape = parseEscape text
     if tryEscape.ok
-      tryInside = parseStringInside tryChar.rest
+      tryInside = parseStringInside tryEscape.rest
       if tryInside.ok
         ok: yes, data: "#{tryEscape.data}#{tryInside.data}", rest: tryInside.rest
       else ok: yes, data: tryEscape.data, rest: tryEscape.rest
@@ -172,4 +172,5 @@ parseProgram = (text) ->
 
 exports.parseString = parseString
 exports.parseVector = parseVector
+exports.parseBackslash = parseBackslash
 exports.parseProgram = parseProgram
