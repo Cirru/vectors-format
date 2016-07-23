@@ -7,9 +7,9 @@ Cirru Vectors Format
 
 ```edn
 [
-["a" "b" "c d"]
-["e" ["f" ["g"] "h"]]
-["i"]
+[ "a" "b" "c d" ]
+[ "e" [ "f" [ "g" ] "h" ] ]
+[ "i" ]
 ]
 ```
 
@@ -32,7 +32,7 @@ expected = ok: yes, data: [['a', ['b']], ['c'], ['d']], rest: ''
 ```coffee
 data = [["a", "b", "c d"],["e", ["f", ["g"], "h"]], ["i"]]
 result = write data
-expected = '\n[\n["a" "b" "c d"]\n["e" ["f" ["g"] "h"]]\n["i"]\n]\n'
+expected = '\n[\n[ "a" "b" "c d" ]\n[ "e" [ "f" [ "g"] "h" ] ]\n[ "i" ]\n]\n'
 ```
 
 ### Test
